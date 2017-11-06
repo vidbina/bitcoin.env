@@ -1,25 +1,5 @@
-let
-  pkgs = import <nixpkgs> {}; 
-  autoreconf = pkgs.autoreconf;
-  stdenv = pkgs.stdenv;
-  fetchurl = pkgs.fetchUrl;
-  pkgconfig = pkgs.pkgsconfig;
-  autoreconfHook = pkgs.autoreconfHook;
-  openssl = pkgs.openssl;
-  c-db48 = pkgs.db48; #.overrideAttrs { };
-    #configureFlags = pkgs.db48.configureFlags; # ++ " --disable-shared";
-  boost = pkgs.boost155;
-  zlib = pkgs.zlib;
-  miniupnpc = pkgs.miniupnpc;
-  qt4 = pkgs.qt4;
-  glibc = pkgs.glibc;
-  utillinux = pkgs.utillinux;
-  protobuf = pkgs.protobuf;
-  qrencode = pkgs.qrencode;
-  libevent = pkgs.libevent;
-  withGui = pkgs.withGui;
-  gcc = if stdenv.cc.isGNU then stdenv.cc.cc else stdenv.cc.cc.gcc;
-in rec {
+with import <nixpkgs> {};
+rec {
   btc = stdenv.mkDerivation rec {
     name = "bitcoin-dev-env";
     src = ./.;
@@ -56,7 +36,7 @@ in rec {
       #pkgs.libdbi
       pkgs.libtool
       pkgs.pkgconfig
-      openssl c-db48 boost zlib miniupnpc protobuf libevent
+      openssl db48 boost zlib miniupnpc protobuf libevent
       utillinux qt4 qrencode
     ];
   };
