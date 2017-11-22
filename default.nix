@@ -26,17 +26,14 @@ rec {
       "-isystem ${gppPath}/${stdenv.targetPlatform.config}";
 
     buildInputs = [
-      #pkgs.autogen
-      pkgs.autoconf
-      pkgs.automake
-      pkgs.gnumake
-      pkgs.glibc
-      pkgs.db48
-      #pkgs.leveldb
-      pkgs.m4
-      #pkgs.libdbi
-      pkgs.libtool
-      pkgs.pkgconfig
+      autoconf
+      automake
+      gnumake
+      glibc
+      db48
+      m4
+      libtool
+      pkgconfig
       openssl db48 boost zlib miniupnpc protobuf libevent
       utillinux qt4 qrencode
     ];
