@@ -1,6 +1,10 @@
 # Usage
 
- - `git clone` [bitcoin](https://github.com/bitcoin/bitcoin)
+## Nix
+
+These instructions should assist in setting up a NixOS shell, capable of building the bitcoin project.
+
+ - git clone [bitcoin](https://github.com/bitcoin/bitcoin)
  - copy or symlink default.nix in this repository into the bitcoin directory
  - `nix-shell` :wink: inside the bitcoin directory
 
