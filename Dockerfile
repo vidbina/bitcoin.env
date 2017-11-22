@@ -8,7 +8,15 @@ RUN \
   add-apt-repository ppa:bitcoin/bitcoin && \
   apt-get update && \
   apt-get install -y \
-    ca-certificates \
+    build-essential \
+    libtool \
+    autotools-dev \
+    automake \
+    pkg-config \
+    libssl-dev \
+    libevent-dev \
+    bsdmainutils \
+    python3 \
     libboost-system-dev \
     libboost-filesystem-dev \
     libboost-chrono-dev \
