@@ -10,7 +10,7 @@ rec {
       builtins.replaceStrings ["gcc-"] [""] gcc.name;
 
     PKG_PROG_PKG_CONFIG="${pkgs.pkgconfig}/bin/pkg-config";
-    BDB_CFLAGS="${pkgs.db48}/include";
+    BDB_CFLAGS="-I${pkgs.db48.dev}/include";
 
     BOOST_LIBS="${boost}/lib/";
     BOOST_ROOT="${boost}";
@@ -30,7 +30,7 @@ rec {
       automake
       gnumake
       glibc
-      db48
+      python3
       m4
       libtool
       pkgconfig
