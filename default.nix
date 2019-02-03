@@ -38,4 +38,6 @@ rec {
       utillinux qt4 qrencode
     ];
   };
+
+  TERM="ansi";
 }
