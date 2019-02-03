@@ -50,7 +50,7 @@ stdenv.mkDerivation rec {
         echo -e "\e[91m"
       fi
     }
-    export PS1='\[$(exitstatus)\]Ƀ\[\e[39m\] '
-    export PS2="Ƀ "
+    export PS1='\n\[$(exitstatus)\]Ƀ\[\e[39m\] '
+    export PS2="\nɃ "
   '';
 }
