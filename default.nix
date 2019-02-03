@@ -28,13 +28,13 @@ rec {
     buildInputs = [
       autoconf
       automake
-      gnumake
-      glibc
       db48
-      m4
+      glibc
+      gnumake
       libtool
-      pkgconfig
+      m4
       openssl db48 boost zlib miniupnpc protobuf libevent
+      pkgconfig
       utillinux qt4 qrencode
     ];
   };
