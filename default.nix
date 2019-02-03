@@ -33,6 +33,7 @@ rec {
       gnumake
       libtool
       m4
+      which
       openssl db48 boost zlib miniupnpc protobuf libevent
       pkgconfig
       utillinux qt4 qrencode
