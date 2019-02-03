@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     builtins.replaceStrings ["gcc-"] [""] gcc.name;
 
   PKG_PROG_PKG_CONFIG="${pkgs.pkgconfig}/bin/pkg-config";
-  BDB_CFLAGS="${pkgs.db48}/include";
+  BDB_CFLAGS="-I${pkgs.db48.dev}/include";
 
   BOOST_LIBS="${boost}/lib/";
   BOOST_ROOT="${boost}";
@@ -27,16 +27,16 @@ stdenv.mkDerivation rec {
   buildInputs = [
     autoconf
     automake
-    db48
     gcc
     glibc
     gnumake
     libtool
     m4
-    which
     openssl db48 boost zlib miniupnpc protobuf libevent
     pkgconfig
+    python3
     utillinux qt4 qrencode
+    which
   ];
 
   shellHook = ''
