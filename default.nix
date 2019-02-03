@@ -1,6 +1,7 @@
 with import <nixpkgs> {};
 let
   gcc = if stdenv.cc.isGNU then stdenv.cc.cc else stdenv.cc.cc.gcc;
+  boost = boost165;
 in stdenv.mkDerivation rec {
   name = "bitcoin-dev-env";
   src = ./.;
