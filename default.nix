@@ -28,6 +28,7 @@ stdenv.mkDerivation rec {
     autoconf
     automake
     db48
+    gcc
     glibc
     gnumake
     libtool
