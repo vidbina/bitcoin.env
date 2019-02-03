@@ -1,6 +1,7 @@
 with import <nixpkgs> {};
-let gcc = if stdenv.cc.isGNU then stdenv.cc.cc else stdenv.cc.cc.gcc; in
-stdenv.mkDerivation rec {
+let
+  gcc = if stdenv.cc.isGNU then stdenv.cc.cc else stdenv.cc.cc.gcc;
+in stdenv.mkDerivation rec {
   name = "bitcoin-dev-env";
   src = ./.;
   version = "0.1.0";
@@ -27,16 +28,24 @@ stdenv.mkDerivation rec {
   buildInputs = [
     autoconf
     automake
+    boost
+    db48
     gcc
     glibc
     gnumake
+    libevent
     libtool
     m4
-    openssl db48 boost zlib miniupnpc protobuf libevent
+    miniupnpc
+    openssl
     pkgconfig
+    protobuf
     python3
-    utillinux qt4 qrencode
+    qrencode
+    qt4
+    utillinux
     which
+    zlib
   ];
 
   shellHook = ''
