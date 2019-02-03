@@ -38,5 +38,19 @@ stdenv.mkDerivation rec {
     utillinux qt4 qrencode
   ];
 
-  TERM="ansi";
+  shellHook = ''
+    # https://github.com/NixOS/nix/issues/1056
+    export TERMINFO=/run/current-system/sw/share/terminfo
+    real_TERM=$TERM; TERM=xterm; TERM=$real_TERM; unset real_TERM
+
+    exitstatus() {
+      if [[ $? == 0 ]]; then
+        echo -e "\e[92m"
+      else
+        echo -e "\e[91m"
+      fi
+    }
+    export PS1='\[$(exitstatus)\]Ƀ\[\e[39m\] '
+    export PS2="Ƀ "
+  '';
 }
