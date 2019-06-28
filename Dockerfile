@@ -20,7 +20,6 @@ RUN \
     libboost-system-dev \
     libboost-filesystem-dev \
     libboost-chrono-dev \
-    libboost-program-options-dev \
     libboost-test-dev \
     libboost-thread-dev \
     libdb4.8-dev \
